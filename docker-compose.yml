@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app-a:
+    image: duvard/app-a
+    ports:
+      - "5000:5000"
+    depends_on:
+      - app-b
+
+  app-b:
+    image: duvard/app-b
+    ports:
+      - "5001:5001"

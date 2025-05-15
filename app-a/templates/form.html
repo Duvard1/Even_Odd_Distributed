@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Evaluador de Números</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>¿Par o Impar?</h1>
+        <p>Escribe un numero</p>
+        <form method="post">
+            <input type="number" name="number" required>
+            <input class="boton" type="submit" value="Enviar">
+        </form>
+        {% if result %}
+            <p>Resultado: {{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
