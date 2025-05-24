@@ -35,7 +35,4 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd ~/Even_Odd_Distributed
-            sudo docker container prune -f
-            sudo docker-compose down
-            sudo docker ps -q --filter "expose=5001" | xargs -r sudo docker stop
             sudo docker-compose up --build -d
