@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "."
-          target: "~/my-website"
+          target: "~/Even_Odd_Distributed"
         
 
 
@@ -32,12 +32,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd ~/my-website
-            CONTAINER_ID=$(sudo docker ps -q --filter "publish=5001")
-            if [ ! -z "$CONTAINER_ID" ]; then
-              sudo docker stop $CONTAINER_ID
-              sudo docker rm $CONTAINER_ID
-            fi
+            cd ~/Even_Odd_Distributed
             sudo docker container prune -f
             sudo docker-compose down
             sudo docker-compose up --build -d
