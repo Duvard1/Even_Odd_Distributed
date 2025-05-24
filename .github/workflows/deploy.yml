@@ -34,5 +34,6 @@ jobs:
           script: |
             cd ~/my-website
             sudo fuser -k 5001/tcp || true
+            sudo docker container prune -f
             sudo docker-compose down
             sudo docker-compose up --build -d
