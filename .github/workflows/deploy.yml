@@ -34,5 +34,6 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            sudo docker stop even_odd_distributed_app-a_1 even_odd_distributed_app-b_1
             cd ~/Even_Odd_Distributed
             sudo docker-compose up --build -d
