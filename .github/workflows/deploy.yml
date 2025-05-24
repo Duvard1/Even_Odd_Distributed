@@ -21,7 +21,9 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           source: "."
           target: "~/Even_Odd_Distributed"
-        
+          port: 22
+          overwrite: true
+          rm: true
 
 
 
